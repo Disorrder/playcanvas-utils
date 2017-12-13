@@ -2,7 +2,7 @@
 
 class Raycaster {
     constructor(ray) {
-        this.app = pc.app;
+        this.app = pc.app || pc.script.app;
         this.ray = ray || new pc.Ray();
         this.intersectable = [];
 
