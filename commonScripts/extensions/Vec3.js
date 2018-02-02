@@ -57,6 +57,14 @@ pc.Vec3.prototype.copyFromObject = function(obj) {
     return this;
 };
 
+pc.Vec3.prototype.randomize = function(spread = 1) {
+    spread /= 2;
+    this.x = pc.math.random(-spread, spread);
+    this.y = pc.math.random(-spread, spread);
+    this.z = pc.math.random(-spread, spread);
+    return this;
+};
+
 // --- utils ---
 pc.Vec3.prototype.toObject = function() {
     return {x: this.x, y: this.y, z: this.z};
