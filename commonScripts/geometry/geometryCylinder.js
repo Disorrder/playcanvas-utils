@@ -13,8 +13,9 @@ GeometryCylinder.prototype.initialize = function() {
 GeometryCylinder.prototype.createMesh = function() {
     var options = {
         radius: this.radius,
-        latitudeBands: this.latitudeBands,
-        longitudeBands: this.longitudeBands,
+        height: this.height,
+        heightSegments: this.heightSegments,
+        capSegments: this.capSegments,
     };
     return pc.createCylinder(this.app.graphicsDevice, options);
 };
