@@ -4,7 +4,6 @@ WasdController.attributes.add('velocity', {type: 'number', default: 1});
 
 // initialize code called once per entity
 WasdController.prototype.initialize = function() {
-    this.force = new pc.Vec3();
     this._force = new pc.Vec3();
 
     this.camera = this.entity.findByName('Camera');
@@ -34,7 +33,7 @@ WasdController.prototype.update = function(dt) {
         this._force.z -= this.camera.forward.z;
     }
 
-    if (this._force.x === 0 && this._force.y === 0) return;
+    if (this._force.x === 0 && this._force.z === 0) return;
 
     this._force.normalize().scale(this.velocity * dt);
 
